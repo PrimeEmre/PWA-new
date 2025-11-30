@@ -1,4 +1,4 @@
-name: Deploy PWA to Pages
+name: Deploy Static PWA to GitHub Pages
 
 on:
   push:
@@ -22,24 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # change to ./build if not using Vite
+          path: '.'  # Upload everything (index.html, CSS, JS, images, etc.)
 
       - name: Deploy to GitHub Pages
         id: deployment
