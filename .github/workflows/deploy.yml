@@ -19,16 +19,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
 
-      - name: Upload site files
+      - name: Upload static files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # Upload index.html, CSS, JS, and images
+          path: ./  # your index.html, CSS, JS, and images are all here
 
       - name: Deploy to GitHub Pages
         id: deployment
