@@ -1,21 +1,14 @@
 // --- sw.js ---
 
-// 1. UPDATE THE PATH TO MATCH YOUR REPO NAME
 var GHPATH = '/PWA-new'; 
-
 var APP_PREFIX = 'gppwa_';
-var VERSION = 'version_004'; // I bumped the version so the browser sees the change
+var VERSION = 'version_005'; // Bumped version
 
 var URLS = [
     `${GHPATH}/`,
     `${GHPATH}/index.html`,
-    `${GHPATH}/Css/style.css`,  
-    `${GHPATH}/JS/script.js`    
-];
-    
-    // I COMMENTED THIS OUT TO PREVENT THE CRASH
-    // Uncomment this line ONLY if you are sure the file exists on GitHub
-    // , `${GHPATH}/images/android-chrome-192x192.png` 
+    `${GHPATH}/Css/style.css`,   // Ensure folder is named 'css' (lowercase)
+    `${GHPATH}/JS/script.js`     // Ensure folder is named 'js' (lowercase)
 ];
 
 var CACHE_NAME = APP_PREFIX + VERSION;
@@ -48,29 +41,23 @@ self.addEventListener('activate', function (e) {
     );
 });
 
-// --- THIS IS WHERE THE API LOGIC GOES ---
 self.addEventListener('fetch', function (e) {
-    
-    // 1. Check if the URL is your AI API
+    // 1. API Logic (Network Only)
     if (e.request.url.includes('pollinations.ai')) {
-        // STRATEGY: Network Only
-        // Always go to the internet for the AI image. Never cache it.
         e.respondWith(
             fetch(e.request).catch(() => {
                 console.log("Offline: Cannot generate AI image");
             })
         );
-        return; // Stop here, don't run the cache code below
+        return; 
     }
 
-    // 2. Standard Cache Strategy for everything else (HTML, CSS, JS)
+    // 2. Cache Logic
     e.respondWith(
         caches.match(e.request).then(function (request) {
             if (request) {
-                console.log('Responding with cache : ' + e.request.url);
                 return request;
             } else {
-                console.log('File is not cached, fetching : ' + e.request.url);
                 return fetch(e.request);
             }
         })
