@@ -1,16 +1,20 @@
+// --- sw.js ---
+
 // 1. UPDATE THE PATH TO MATCH YOUR REPO NAME
 var GHPATH = '/PWA-new'; 
 
 var APP_PREFIX = 'gppwa_';
-var VERSION = 'version_002'; // Updated version
+var VERSION = 'version_004'; // I bumped the version so the browser sees the change
 
 var URLS = [
     `${GHPATH}/`,
     `${GHPATH}/index.html`,
     `${GHPATH}/css/style.css`,
-    `${GHPATH}/js/script.js`,
-    // Make sure your icons are actually in an 'images' folder!
-    `${GHPATH}/images/android-chrome-192x192.png` 
+    `${GHPATH}/js/script.js`
+    
+    // I COMMENTED THIS OUT TO PREVENT THE CRASH
+    // Uncomment this line ONLY if you are sure the file exists on GitHub
+    // , `${GHPATH}/images/android-chrome-192x192.png` 
 ];
 
 var CACHE_NAME = APP_PREFIX + VERSION;
