@@ -2,35 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI generator " />
-  <meta name="author" content="Emre Guzel" />
-  <meta name="theme-color" content="#FFFFFF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI generator">
+    <meta name="author" content="Emre Guzel">
+    <meta name="theme-color" content="#FFFFFF">
     <title>API projects with JS</title>
-      <!-- PWA Manifest -->
-  
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/ICD2O-Unit-6-01-Emre-Guzel-2/site.webmanifest" />
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://mths-icd2o-1-2024.github.io/ICD2O-Unit-6-01-Emre-Guzel-2/" />
-  
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="stylesheet" href="CSS/style.css">
+    
+    <link rel="manifest" href="./site.webmanifest">
+    
+    <link rel="canonical" href="https://primeemre.github.io/PWA-new/">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-    <h1>AI image gnerate </h1>
-    <input type="text" placeholder="Enter the name of the image " id="image-generate">
+    <h1>AI Image Generator</h1>
+    
+    <input type="text" placeholder="Enter the name of the image" id="image-generate">
     <br><br>
-    <button class="news" onclick="genareteImg()"> Genareate iamge </button>
+    
+    <button class="news" onclick="generateImg()">Generate Image</button>
+    
     <p id="result"></p>
+    
     <div class="ai-image">
-        <img src="images/AI-genrate.jpg" alt="Vote">
+        <img id="result-image" src="images/AI-genrate.jpg" alt="Result">
     </div> 
     
-    <script src="JS/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
