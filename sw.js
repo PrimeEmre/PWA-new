@@ -9,8 +9,9 @@ var VERSION = 'version_004'; // I bumped the version so the browser sees the cha
 var URLS = [
     `${GHPATH}/`,
     `${GHPATH}/index.html`,
-    `${GHPATH}/css/style.css`,
-    `${GHPATH}/js/script.js`
+    `${GHPATH}/Css/style.css`,  
+    `${GHPATH}/JS/script.js`    
+];
     
     // I COMMENTED THIS OUT TO PREVENT THE CRASH
     // Uncomment this line ONLY if you are sure the file exists on GitHub
