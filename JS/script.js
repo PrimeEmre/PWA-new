@@ -1,4 +1,10 @@
 
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register("/PWA-new/sw.js", {
+        scope: "/PWA-new/",
+    })
+}
+
 // AI image generate API
 function generateImg() {
     imagePrompt = document.getElementById('image-generate').value;
